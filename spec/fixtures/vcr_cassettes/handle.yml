@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://test-api.handcash.io/api/receivingAddress/rjseibane
+    uri: https://api.handcash.io/api/receivingAddress/rjseibane
     body:
       encoding: US-ASCII
       string: ''
@@ -14,7 +14,7 @@ http_interactions:
       User-Agent:
       - Ruby
       Host:
-      - test-api.handcash.io
+      - api.handcash.io
   response:
     status:
       code: 200

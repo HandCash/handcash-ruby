@@ -9,15 +9,21 @@ describe Handcash::API do
       expect(hc.network).to eq(:testnet)
     end
 
-    it 'should default to testnet' do
+    it 'should support mainnet' do
+      hc = described_class.new(network: :mainnet)
+      expect(hc.url).to eq('https://api.handcash.io/api/')
+      expect(hc.network).to eq(:mainnet)
+    end
+
+    it 'should default to mainnet' do
       hc = described_class.new
-      expect(hc.url).to eq('https://test-api.handcash.io/api/')
-      expect(hc.network).to eq(:testnet)
+      expect(hc.url).to eq('https://api.handcash.io/api/')
+      expect(hc.network).to eq(:mainnet)
     end
 
     it 'should raise if an unsupported network is used' do
-      expect { described_class.new(network: :mainnet) }
-        .to raise_error('Unsupported network - mainnet')
+      expect { described_class.new(network: :crap) }
+        .to raise_error('Unsupported network - crap')
     end
   end
 

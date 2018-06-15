@@ -9,13 +9,16 @@ module Handcash
     attr_reader :network, :url
 
     TESTNET_URL = 'https://test-api.handcash.io/api/'.freeze
+    MAINNET_URL = 'https://api.handcash.io/api/'.freeze
 
     def initialize(opts = {})
-      # Default to testnet since mainnet is not available.
-      @network = opts[:network] || :testnet
+      # Default to mainnet.
+      @network = opts[:network] || :mainnet
       case @network
       when :testnet
         @url = TESTNET_URL
+      when :mainnet
+        @url = MAINNET_URL
       else
         raise "Unsupported network - #{@network}"
       end

@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ```ruby
 require 'handcash/api'
-hc = Handcash::API.new(network: :testnet)
+hc = Handcash::API.new
 hc.receive('someuser')
 ```
 
